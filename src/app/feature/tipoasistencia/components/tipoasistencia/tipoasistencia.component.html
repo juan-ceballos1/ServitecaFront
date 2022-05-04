@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-auto bg-light sticky-top">
+          <div class="d-flex flex-sm-column ">
+              <a  routerLink="./listar" class="p-3 link-dark text-decoration-none" data-bs-placement="right" >
+                  Listar
+              </a>
+              <a  routerLink="./crear" class="p-3 link-dark text-decoration-none"  data-bs-placement="right" >
+                  Crear
+              </a>
+          </div>
+      </div>
+      <div class="col-sm min-vh-100">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div> 
