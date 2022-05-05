@@ -45,20 +45,22 @@ pipeline {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'npm run test'
+        sh 'npm run test  --watch=false --browsers ChromeHeadless'
       }
     }
+	/*
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
         sh 'npm run e2e'
       }
     }
+	*/
 	stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
-               sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:serviteca-juan.ceballos',
-               sonarName:'"CeibaADN-Serviteca(juan.ceballos)"',
+               sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:serviteca.frontend-juan.ceballos',
+               sonarName:'"CeibaADN-ServitecaFrontend(juan.ceballos)"',
                sonarPathProperties:'./sonar-project.properties')
       }
     }
