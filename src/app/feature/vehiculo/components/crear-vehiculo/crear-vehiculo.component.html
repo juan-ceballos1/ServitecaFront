@@ -1,42 +1,36 @@
-<div class="container">
-    
-        <form  >
+<div class="container-fluid">
             <h1 class="text-left">Registrar Vehiculo</h1>
             <br>
             <div class="row">
             <div class="col-sm-2">
-                <label>Nombre:</label>
+                <label>Matricula:</label>
             </div>
-            <div class="col-sm-4">
-                <input validar type="text" id="nombreArticulo" name="nombreArticulo" placeholder="Nombre artículo"
-                class="form-control" formControlName="nombreArticulo">
+            <div class="col-sm-6">
+                <input validar type="text" id="matricula" name="matricula" placeholder="Matricula"
+                class="form-control" formControlName="matricula">
             </div>
             </div>
         
-            <div class="row">
+            <div class="row mt-2">
+            <div class="col-sm-2 ">
+                <label>Marca:</label>
+            </div>
+            <div class="col-sm-6 ">
+                <input validar type="text" id="marca" name="marca" placeholder="Marca"
+                class="form-control" formControlName="marca">
+            </div>
+            </div>
+        
+            <div class="row mt-2">
             <div class="col-sm-2">
-                <label>Unidades:</label>
+                <label>Modelo:</label>
             </div>
-            <div class="col-sm-4">
-                <input validar type="text" id="unidades" name="unidades" placeholder="Unidades artículo"
-                class="form-control" formControlName="unidades">
-            </div>
-            </div>
-        
-            <div class="row">
-            <div class="col-sm-2">
-                <label>Precio:</label>
-            </div>
-            <div class="col-sm-4">
-                <input validar type="text" id="precio" name="precio" placeholder="Precio artículo"
-                class="form-control" formControlName="precio">
+            <div class="col-sm-6">
+                <input validar type="text" id="modelo" name="modelo" placeholder="Modelo"
+                class="form-control" formControlName="modelo">
             </div>
             </div>
-        
             <button  id="guardar" class="btn btn-primary btn-block mt-4" >
-            Guardar Artículo
+            Guardar Vehiculo
             </button>
-        
-        </form>
-   
 </div>
