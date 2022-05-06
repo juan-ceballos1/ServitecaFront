@@ -1,1 +1,22 @@
-<p>listar-asistencia works!</p>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Tipo de Asistencia</th>
+        <th scope="col">Vehiculo</th>
+        <th scope="col">Fecha de inicio</th>
+        <th scope="col">Fecha de Finalizacion</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let asistencia of listaAsistencias | async">
+        <td>{{asistencia.tipoAsistencia.nombre}}</td>
+        <td>{{asistencia.vehiculo.matricula}}</td>
+        <td>{{asistencia.fechaInicio }}</td>
+        <td>{{asistencia.fechaFin}}</td>
+        <td>{{asistencia.precio| currency:'COP$':'symbol' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

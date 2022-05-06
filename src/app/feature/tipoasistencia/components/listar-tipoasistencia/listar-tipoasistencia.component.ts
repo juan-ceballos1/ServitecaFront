@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TipoAsistencia } from '../../shared/model/tipoasistencia';
+import { TipoAsistenciaService } from '../../shared/service/tipo-asistencia.service';
 
 @Component({
   selector: 'app-listar-tipoasistencia',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarTipoasistenciaComponent implements OnInit {
 
-  constructor() { }
+  public listaTipoAsistencias: Observable<TipoAsistencia[]>;
+  constructor(protected tipoAsistenciaService:TipoAsistenciaService) { }
 
   ngOnInit(): void {
+    this.listaTipoAsistencias=this.tipoAsistenciaService.consultar();
   }
 
 }

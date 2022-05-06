@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TipoAsistenciaService } from '../../shared/service/tipo-asistencia.service';
 
 @Component({
   selector: 'app-crear-tipoasistencia',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-tipoasistencia.component.css']
 })
 export class CrearTipoasistenciaComponent implements OnInit {
-
-  constructor() { }
+  tipoAsistencia:FormGroup;
+  constructor(private tipoAsistenciaServicio:TipoAsistenciaService) { }
 
   ngOnInit(): void {
+    this.tipoAsistencia = new FormGroup({
+      nombre: new FormControl('',[Validators.required])
+    }); 
+  }
+
+  crear(){
+    this.tipoAsistenciaServicio.crearTipoAsistencia(this.tipoAsistencia.value).subscribe(
+      ()=>this.tipoAsistencia.reset(),
+      _error=>console.log("Error"));
   }
 
 }

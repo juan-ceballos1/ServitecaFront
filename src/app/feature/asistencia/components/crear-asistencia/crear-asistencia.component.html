@@ -1,1 +1,61 @@
-<p>crear-asistencia works!</p>
+<div class="container-fluid">
+  <form [formGroup]="asistencia" (ngSubmit)="crear()">
+    <h1 class="text-left">Registrar Asistencia</h1>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Tipo de Asistencia:</label>
+      </div>
+      <div class="col-sm-6">
+        <select  class="form-select" id="exampleFormControlSelect1" type="text" id="tipoAsistencia" name="tipoAsistencia" placeholder="TipoDeAsistencia" formControlName="idTipoAsistencia">
+          <option selected *ngFor="let tipoAsistencia of listaTipoAsistencias | async" value="{{tipoAsistencia.id}}">{{tipoAsistencia.nombre}}</option>  
+       </select>
+        
+      </div>
+    </div>
+  
+    <div class="row mt-2">
+      <div class="col-sm-2 ">
+        <label>Vehiculo:</label>
+      </div>
+      <div class="col-sm-6 ">
+        <input validar type="text" id="vehiculo" name="vehiculo" placeholder="Vehiculo" class="form-control"
+          formControlName="idVehiculo">
+      </div>
+    </div>
+  
+    <div class="row mt-2">
+      <div class="col-sm-2">
+        <label>Fecha de Inicio:</label>
+      </div>
+      <div class="col-sm-6">
+        <input validar type="date" id="fechaDeInicio" name="fechaDeInicio" placeholder="FechaInicio" class="form-control"
+          formControlName="fechaInicio">
+      </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-sm-2">
+          <label>Fecha de Finalizacion:</label>
+        </div>
+        <div class="col-sm-6">
+          <input validar type="date" id="fechaDeFinalizacion" name="fechaDeFinalizacion" placeholder="FechaDeFinalizacion" class="form-control"
+            formControlName="fechaFin">
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-sm-2">
+          <label>Precio:</label>
+        </div>
+        <div class="col-sm-6">
+          <input validar type="text" id="precio" name="precio" placeholder="Precio" class="form-control"
+            formControlName="precio">
+        </div>
+      </div>
+    <button id="guardar" class="btn btn-primary btn-block mt-4">
+      Guardar Asitencia
+    </button>
+  </form>
+  </div>
+  

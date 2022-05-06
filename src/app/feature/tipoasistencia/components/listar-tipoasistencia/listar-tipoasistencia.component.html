@@ -1,1 +1,14 @@
-<p>listar-tipoasistencia works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tipoAsistencia of listaTipoAsistencias | async">
+        <td>{{tipoAsistencia.id}}</td>
+        <td>{{tipoAsistencia.nombre}}</td>
+      </tr>
+    </tbody>
+</table>

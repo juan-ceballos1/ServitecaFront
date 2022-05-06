@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DtoAsistencia } from '../../shared/model/dtoasistencia';
+import { AsistenciaService } from '../../shared/service/asistencia.service';
 
 @Component({
   selector: 'app-listar-asistencia',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarAsistenciaComponent implements OnInit {
 
-  constructor() { }
+  public listaAsistencias: Observable<DtoAsistencia[]>;
+  constructor(protected asistenciaService:AsistenciaService) { }
 
   ngOnInit(): void {
+    this.listaAsistencias=this.asistenciaService.consultar()
   }
 
 }

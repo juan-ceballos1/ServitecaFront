@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from '@home/home.component';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,6 +19,7 @@ import { CookieService } from 'ngx-cookie-service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule
   ],
   providers: [CookieService],

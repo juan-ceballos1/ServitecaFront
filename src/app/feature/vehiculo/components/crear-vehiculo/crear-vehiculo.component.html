@@ -1,36 +1,39 @@
 <div class="container-fluid">
-            <h1 class="text-left">Registrar Vehiculo</h1>
-            <br>
-            <div class="row">
-            <div class="col-sm-2">
-                <label>Matricula:</label>
-            </div>
-            <div class="col-sm-6">
-                <input validar type="text" id="matricula" name="matricula" placeholder="Matricula"
-                class="form-control" formControlName="matricula">
-            </div>
-            </div>
-        
-            <div class="row mt-2">
-            <div class="col-sm-2 ">
-                <label>Marca:</label>
-            </div>
-            <div class="col-sm-6 ">
-                <input validar type="text" id="marca" name="marca" placeholder="Marca"
-                class="form-control" formControlName="marca">
-            </div>
-            </div>
-        
-            <div class="row mt-2">
-            <div class="col-sm-2">
-                <label>Modelo:</label>
-            </div>
-            <div class="col-sm-6">
-                <input validar type="text" id="modelo" name="modelo" placeholder="Modelo"
-                class="form-control" formControlName="modelo">
-            </div>
-            </div>
-            <button  id="guardar" class="btn btn-primary btn-block mt-4" >
-            Guardar Vehiculo
-            </button>
+  <h1 class="text-left">Registrar Vehiculo</h1>
+  <br>
+  <form [formGroup]="vehiculo" (ngSubmit)="crear()">
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Matricula:</label>
+    </div>
+    <div class="col-sm-6">
+      <input validar type="text" id="matricula" name="matricula" placeholder="Matricula" class="form-control"
+        formControlName="matricula">
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-sm-2 ">
+      <label>Marca:</label>
+    </div>
+    <div class="col-sm-6 ">
+      <input validar type="text" id="marca" name="marca" placeholder="Marca" class="form-control"
+        formControlName="marca">
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-sm-2">
+      <label>Modelo:</label>
+    </div>
+    <div class="col-sm-6">
+      <input validar type="text" id="modelo" name="modelo" placeholder="Modelo" class="form-control"
+        formControlName="modelo">
+    </div>
+  </div>
+  <button id="guardar" class="btn btn-primary btn-block mt-4">
+    Guardar Vehiculo
+  </button>
+</form>
+  
 </div>

@@ -1,1 +1,19 @@
-<p>crear-tipoasistencia works!</p>
+<div class="container-fluid">
+  <form [formGroup]="tipoAsistencia" (ngSubmit)="crear()">
+    <h1 class="text-left">Crear Tipo de Asistencia</h1>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Nombre:</label>
+      </div>
+      <div class="col-sm-6">
+        <input validar type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control"
+          formControlName="nombre">
+      </div>
+    </div>
+    <button id="guardar" class="btn btn-primary btn-block mt-4">
+      Guardar Asistencia
+    </button>
+  </form>
+  </div>
+  

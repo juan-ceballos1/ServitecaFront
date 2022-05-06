@@ -8,7 +8,7 @@ import { MenuItem } from '@core/modelo/menu-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app-base';
+  title = 'serviteca';
   public companies: MenuItem[] = [
     { url: '/tipoasistencia', nombre: 'tipo de asistencia' },
     {url: '/asistencia', nombre: 'asistencia'},

@@ -5,6 +5,7 @@ import { TipoasistenciaRoutingModule } from './tipoasistencia-routing.module';
 import { TipoasistenciaComponent } from './components/tipoasistencia/tipoasistencia.component';
 import { CrearTipoasistenciaComponent } from './components/crear-tipoasistencia/crear-tipoasistencia.component';
 import { ListarTipoasistenciaComponent } from './components/listar-tipoasistencia/listar-tipoasistencia.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ListarTipoasistenciaComponent } from './components/listar-tipoasistenci
   ],
   imports: [
     CommonModule,
-    TipoasistenciaRoutingModule
+    TipoasistenciaRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TipoasistenciaModule { }

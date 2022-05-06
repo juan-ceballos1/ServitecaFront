@@ -1,1 +1,16 @@
-<p>listar-vehiculo works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Matricula</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of listaVehiculos | async">
+        <td>{{vehiculo.matricula}}</td>
+        <td>{{vehiculo.marca}}</td>   
+        <td>{{vehiculo.modelo}}</td>
+      </tr>
+    </tbody>
+  </table>
