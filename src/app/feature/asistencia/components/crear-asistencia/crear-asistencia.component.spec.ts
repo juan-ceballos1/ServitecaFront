@@ -45,6 +45,17 @@ describe('CrearAsistenciaComponent', () => {
     expect(component.asistencia.valid).toBeFalsy();
   });
 
+  it('Registrar es invalida si no tiene idTipoAsistencia', () => {
+    
+    component.asistencia.controls.idTipoAsistencia.setValue(null);
+    component.asistencia.controls.idVehiculo.setValue('1');
+    component.asistencia.controls.fechaInicio.setValue('2020-05-05');
+    component.asistencia.controls.precio.setValue(34534);
+
+    expect(component.asistencia.valid).toBeFalsy();
+
+  });
+
 
   it('Registrar asistencia es exitoso', () => {
     
