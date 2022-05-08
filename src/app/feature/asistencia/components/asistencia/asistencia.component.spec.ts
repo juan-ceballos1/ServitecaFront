@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AsistenciaComponent } from './asistencia.component';
@@ -8,7 +9,10 @@ describe('AsistenciaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AsistenciaComponent ]
+      declarations: [ AsistenciaComponent ],
+      imports: [
+        CommonModule
+      ]
     })
     .compileComponents();
   });
