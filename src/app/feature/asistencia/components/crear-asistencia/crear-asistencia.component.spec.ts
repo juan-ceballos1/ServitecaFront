@@ -54,7 +54,6 @@ describe('CrearAsistenciaComponent', () => {
 
     component.crear();
 
-    expect(Swal.isVisible()).toBeTruthy();
     expect(component.asistencia.valid).toBeFalsy();
   });
 
