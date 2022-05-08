@@ -9,6 +9,7 @@ import { of } from 'rxjs';
 
 import { CrearAsistenciaComponent } from './crear-asistencia.component';
 import Swal from 'sweetalert2';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CrearAsistenciaComponent', () => {
   let component: CrearAsistenciaComponent;
@@ -20,7 +21,7 @@ describe('CrearAsistenciaComponent', () => {
       declarations: [ CrearAsistenciaComponent ],
       imports: [
         CommonModule,
-        HttpClientModule,
+        HttpClientTestingModule,
         RouterTestingModule,
         ReactiveFormsModule,
         FormsModule
