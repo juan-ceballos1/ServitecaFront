@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { TipoAsistencia } from 'src/app/feature/tipoasistencia/shared/model/tipoasistencia';
 import { TipoAsistenciaService } from 'src/app/feature/tipoasistencia/shared/service/tipo-asistencia.service';
+import Swal from 'sweetalert2';
 import { AsistenciaService } from '../../shared/service/asistencia.service';
 
 @Component({
@@ -20,13 +21,8 @@ export class CrearAsistenciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaTipoAsistencias=this.tipoAsistenciaService.consultar();
-    this.asistencia = new FormGroup({
-      idTipoAsistencia: new FormControl(Number,[Validators.required]),
-      idVehiculo: new FormControl('',[Validators.required]),
-      fechaInicio: new FormControl('',[Validators.required]),
-      fechaFin: new FormControl('',[Validators.required]),
-      precio: new FormControl('',[Validators.required])
-    });
+    this.construirFormulario();
+    
   }
 
   crear(){
@@ -34,12 +30,27 @@ export class CrearAsistenciaComponent implements OnInit {
    this.asistencia.value.fechaInicio=this.datePipe.transform(this.asistencia.value.fechaInicio,'yyyy-MM-ddThh:mm:ss');
    console.log(this.asistencia.value)
    this.asistenciaService.crearAsistencia(this.asistencia.value).subscribe(
-    data=>{this.asistencia.reset()
-    console.log(data)
+    ()=>{
+      this.asistencia.reset()
+      Swal.fire({
+        icon:'success',
+        title:'Se ha añadido la asistencia de forma correcta'
+      })
     },
-    error=>console.log(error));
-   
-  
+    error=>Swal.fire({
+      icon:'error',
+      title:error.error.mensaje
+    }));
+  }
+
+  construirFormulario(){
+    this.asistencia = new FormGroup({
+      idTipoAsistencia: new FormControl(Number,[Validators.required]),
+      idVehiculo: new FormControl('',[Validators.required]),
+      fechaInicio: new FormControl('',[Validators.required]),
+      fechaFin: new FormControl(''),
+      precio: new FormControl('',[Validators.required])
+    });
   }
 
 }
