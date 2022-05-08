@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorCamposPlantillaComponent } from './error-campos-plantilla.component';
@@ -8,7 +9,8 @@ describe('ErrorCamposPlantillaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorCamposPlantillaComponent ]
+      declarations: [ ErrorCamposPlantillaComponent ],
+      schemas: [ NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
