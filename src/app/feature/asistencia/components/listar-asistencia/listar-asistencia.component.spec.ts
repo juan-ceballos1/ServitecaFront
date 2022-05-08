@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { ListarAsistenciaComponent } from './listar-asistencia.component';
 import { HttpService } from '@core/services/http.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ListarAsistenciaComponent', () => {
   let component: ListarAsistenciaComponent;
@@ -17,6 +18,7 @@ describe('ListarAsistenciaComponent', () => {
       imports: [
         CommonModule,
         HttpClientModule,
+        HttpClientTestingModule,
         RouterTestingModule
       ],
       providers:[AsistenciaService,HttpService]
