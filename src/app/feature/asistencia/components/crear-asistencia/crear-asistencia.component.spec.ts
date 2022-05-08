@@ -10,7 +10,6 @@ import { CrearAsistenciaComponent } from './crear-asistencia.component';
 
 describe('CrearAsistenciaComponent', () => {
   let component: CrearAsistenciaComponent;
-  let asistenciaService: AsistenciaService;
   let fixture: ComponentFixture<CrearAsistenciaComponent>;
 
   beforeEach(waitForAsync( () => {
@@ -31,7 +30,6 @@ describe('CrearAsistenciaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CrearAsistenciaComponent);
     component = fixture.componentInstance;
-    asistenciaService= TestBed.inject(AsistenciaService);
     fixture.detectChanges();
   });
 
