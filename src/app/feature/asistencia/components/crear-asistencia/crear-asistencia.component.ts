@@ -28,7 +28,8 @@ export class CrearAsistenciaComponent implements OnInit {
   crear(){
    this.asistencia.value.fechaFin=this.datePipe.transform(this.asistencia.value.fechaFin,'yyyy-MM-ddThh:mm:ss');
    this.asistencia.value.fechaInicio=this.datePipe.transform(this.asistencia.value.fechaInicio,'yyyy-MM-ddThh:mm:ss');
-   
+   console.log(this.asistencia.valid)
+   if(this.asistencia.valid){
    this.asistenciaService.crearAsistencia(this.asistencia.value).subscribe(
     ()=>{
       this.asistencia.reset()
@@ -40,10 +41,15 @@ export class CrearAsistenciaComponent implements OnInit {
     error=>{Swal.fire({
       icon:'error',
       title:error.error.mensaje
-    })
-    console.log(error)
-  }
+    })}
     );
+  }
+    else{
+      Swal.fire({
+        icon:'error',
+        title:'No has llenado todos los campos'
+      })
+    }
   }
 
   construirFormulario(){

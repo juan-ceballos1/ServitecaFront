@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { TipoAsistenciaService } from '../../shared/service/tipo-asistencia.service';
 
 @Component({
@@ -18,9 +19,27 @@ export class CrearTipoasistenciaComponent implements OnInit {
   }
 
   crear(){
-    this.tipoAsistenciaServicio.crearTipoAsistencia(this.tipoAsistencia.value).subscribe(
-      ()=>this.tipoAsistencia.reset(),
-      _error=>console.log("Error"));
+    if(this.tipoAsistencia.valid){
+      this.tipoAsistenciaServicio.crearTipoAsistencia(this.tipoAsistencia.value).subscribe(
+        ()=>{
+          this.tipoAsistencia.reset()
+          Swal.fire({
+            icon:'success',
+            title:'Se ha añadido el tipo asistencia de forma correcta'
+          })
+        },
+        error=>{Swal.fire({
+          icon:'error',
+          title:error.error.mensaje
+        })}
+        );
+      }
+      else{
+        Swal.fire({
+          icon:'error',
+          title:"No has llenado todos los campos"
+        })
+      }
   }
 
 }

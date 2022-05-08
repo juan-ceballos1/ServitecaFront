@@ -41,13 +41,23 @@ describe('CrearAsistenciaComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('formulario es invalido cuando esta vacio', () => {
+  it('formulario es invalido cuando no esta completo', () => {
+    component.asistencia.controls.idTipoAsistencia.setValue(null);
+    component.asistencia.controls.idVehiculo.setValue('1');
+    component.asistencia.controls.fechaInicio.setValue('2020-05-05');
+    component.asistencia.controls.precio.setValue(34534);
     expect(component.asistencia.valid).toBeFalsy();
+
+    component.crear();
+
+    expect(Swal.isVisible()).toBeTruthy();
+    expect(Swal.getTitle().textContent).toEqual('No has llenado todos los campos');
+    Swal.clickConfirm();
   });
 
   it('Registrar es invalida y tira mensaje de error', () => {
     
-    component.asistencia.controls.idTipoAsistencia.setValue(1);
+    component.asistencia.controls.idTipoAsistencia.setValue(10);
     component.asistencia.controls.idVehiculo.setValue('1');
     component.asistencia.controls.fechaInicio.setValue('2020-05-05');
     component.asistencia.controls.precio.setValue(34534);
@@ -56,7 +66,7 @@ describe('CrearAsistenciaComponent', () => {
       
         "error": {
             "nombreExcepcion": "ExcepcionValorObligatorio",
-            "mensaje": "Se debe ingresar el tipo de servicio"
+            "mensaje": "El tipo de asistencia no existe"
         }
     
   }));
@@ -65,7 +75,7 @@ describe('CrearAsistenciaComponent', () => {
 
     
     expect(Swal.isVisible()).toBeTruthy();
-    expect(Swal.getTitle().textContent).toEqual('Se debe ingresar el tipo de servicio');
+    expect(Swal.getTitle().textContent).toEqual('El tipo de asistencia no existe');
     Swal.clickConfirm();
 
   });
