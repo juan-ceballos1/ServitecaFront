@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpService } from 'src/app/core/services/http.service';
 import { AsistenciaService } from '../../shared/service/asistencia.service';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 import { CrearAsistenciaComponent } from './crear-asistencia.component';
 import Swal from 'sweetalert2';
@@ -45,20 +45,34 @@ describe('CrearAsistenciaComponent', () => {
     expect(component.asistencia.valid).toBeFalsy();
   });
 
-  it('Registrar es invalida si no tiene idTipoAsistencia', () => {
+  it('Registrar es invalida y tira mensaje de error', () => {
     
-    component.asistencia.controls.idTipoAsistencia.setValue(null);
+    component.asistencia.controls.idTipoAsistencia.setValue(1);
     component.asistencia.controls.idVehiculo.setValue('1');
     component.asistencia.controls.fechaInicio.setValue('2020-05-05');
     component.asistencia.controls.precio.setValue(34534);
 
-    expect(component.asistencia.valid).toBeFalsy();
+    spyOn(asistenciaService, 'crearAsistencia').and.returnValue(throwError({
+      
+        "error": {
+            "nombreExcepcion": "ExcepcionValorObligatorio",
+            "mensaje": "Se debe ingresar el tipo de servicio"
+        }
+    
+  }));
+
+    component.crear();
+
+    
+    expect(Swal.isVisible()).toBeTruthy();
+    expect(Swal.getTitle().textContent).toEqual('Se debe ingresar el tipo de servicio');
+    Swal.clickConfirm();
 
   });
 
 
   it('Registrar asistencia es exitoso', () => {
-    
+    TestBed.resetTestingModule();
     component.asistencia.controls.idTipoAsistencia.setValue('1');
     component.asistencia.controls.idVehiculo.setValue('1');
     component.asistencia.controls.fechaInicio.setValue('2020-05-05');
@@ -72,6 +86,7 @@ describe('CrearAsistenciaComponent', () => {
 
     expect(Swal.isVisible()).toBeTruthy();
     expect(Swal.getTitle().textContent).toEqual('Se ha añadido la asistencia de forma correcta');
+    Swal.clickConfirm();
   });
 
   afterAll(() => {

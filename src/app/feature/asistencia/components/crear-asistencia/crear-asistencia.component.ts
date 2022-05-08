@@ -28,7 +28,7 @@ export class CrearAsistenciaComponent implements OnInit {
   crear(){
    this.asistencia.value.fechaFin=this.datePipe.transform(this.asistencia.value.fechaFin,'yyyy-MM-ddThh:mm:ss');
    this.asistencia.value.fechaInicio=this.datePipe.transform(this.asistencia.value.fechaInicio,'yyyy-MM-ddThh:mm:ss');
-   console.log(this.asistencia.value)
+   
    this.asistenciaService.crearAsistencia(this.asistencia.value).subscribe(
     ()=>{
       this.asistencia.reset()
@@ -37,10 +37,13 @@ export class CrearAsistenciaComponent implements OnInit {
         title:'Se ha añadido la asistencia de forma correcta'
       })
     },
-    error=>Swal.fire({
+    error=>{Swal.fire({
       icon:'error',
       title:error.error.mensaje
-    }));
+    })
+    console.log(error)
+  }
+    );
   }
 
   construirFormulario(){
