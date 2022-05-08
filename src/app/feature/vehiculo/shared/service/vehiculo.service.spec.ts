@@ -1,21 +1,21 @@
- import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
+import { HttpClientTestingModule} from '@angular/common/http/testing';
 
- import { VehiculoService } from './vehiculo.service';
+import { VehiculoService } from './vehiculo.service';
 
- describe('VehiculoService', () => {
-   let service: VehiculoService;
+describe('VehiculoService', () => {
+  let service: VehiculoService;
 
-   beforeEach(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [VehiculoService, HttpService]
-      });
-      service = TestBed.inject(VehiculoService);
-   });
+      imports: [HttpClientTestingModule],
+      providers: [VehiculoService, HttpService]
+    });
+    service = TestBed.inject(VehiculoService);
+  });
 
-   it('should be created', () => {
-     expect(service).toBeTruthy();
-   });
- });
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
