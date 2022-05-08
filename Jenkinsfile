@@ -35,6 +35,13 @@ pipeline {
       }
     }
 
+   stage('clean') {
+      steps{
+		npm cache clean
+          
+      }
+    }
+
     stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
