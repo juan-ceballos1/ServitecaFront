@@ -13,7 +13,7 @@ pipeline {
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK11_Centos' //Verisión preinstalada en la Configuración del Master
+    jdk 'JDK14_Centos' //Verisión preinstalada en la Configuración del Master
   }
 /*	Versiones disponibles
       JDK8_Mac
@@ -31,10 +31,10 @@ pipeline {
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
-        checkout scm
+		checkout scm
       }
     }
- 
+
     stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
