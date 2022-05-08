@@ -41,4 +41,8 @@ describe('CrearAsistenciaComponent', () => {
     expect(component.asistencia.valid).toBeFalsy();
   });
 
+  afterAll(() => {
+    TestBed.resetTestingModule();
+  });
+
 });
