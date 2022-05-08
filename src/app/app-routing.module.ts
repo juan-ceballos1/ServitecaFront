@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [SecurityGuard]  },
   { path: 'asistencia', loadChildren: () => import('./feature/asistencia/asistencia.module').then(m => m.AsistenciaModule) },
   { path: 'vehiculo', loadChildren: () => import('./feature/vehiculo/vehiculo.module').then(m => m.VehiculoModule) },
-  { path: 'tipoasistencia', loadChildren: () => import('./feature/tipoasistencia/tipoasistencia.module').then(m => m.TipoasistenciaModule)}
+  { path: 'tipoasistencia', loadChildren: () => import('./feature/tipoasistencia/tipoasistencia.module').then(m => m.TipoasistenciaModule)},
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

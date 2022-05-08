@@ -1,16 +1,21 @@
-// import { TestBed } from '@angular/core/testing';
+ import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpService } from '@core/services/http.service';
 
-// import { VehiculoService } from './vehiculo.service';
+ import { VehiculoService } from './vehiculo.service';
 
-// describe('VehiculoService', () => {
-//   let service: VehiculoService;
+ describe('VehiculoService', () => {
+   let service: VehiculoService;
 
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({});
-//     service = TestBed.inject(VehiculoService);
-//   });
+   beforeEach(() => {
+    TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        providers: [VehiculoService, HttpService]
+      });
+      service = TestBed.inject(VehiculoService);
+   });
 
-//   it('should be created', () => {
-//     expect(service).toBeTruthy();
-//   });
-// });
+   it('should be created', () => {
+     expect(service).toBeTruthy();
+   });
+ });
