@@ -10,7 +10,7 @@ describe('ErrorCamposPlantillaComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ErrorCamposPlantillaComponent ],
-      schemas: [ NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
