@@ -7,7 +7,6 @@ pipeline {
 
   //Opciones específicas de Pipeline dentro del Pipeline
   options {
-    timeout(time: 10, unit: 'MINUTES') 
     	buildDiscarder(logRotator(numToKeepStr: '3'))
  	disableConcurrentBuilds()
   }
@@ -60,8 +59,7 @@ pipeline {
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
-	  sh 'json-server --watch db.json'
-        sh 'npm run e2e'
+	  sh 'npm run e2e'
       }
     }
 
