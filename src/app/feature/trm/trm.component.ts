@@ -1,0 +1,24 @@
+import { Component, OnInit } from '@angular/core';
+import TrmApi, { TrmApiQuote } from 'trm-api';
+
+@Component({
+  selector: 'app-trm',
+  templateUrl: './trm.component.html',
+  styleUrls: ['./trm.component.css']
+})
+export class TrmComponent implements OnInit {
+
+  readonly trmApi = new TrmApi();
+  public listaTrm: TrmApiQuote[];
+  constructor() { }
+
+  ngOnInit(): void {
+    this.trmApi
+    .history({ limit: 30, order: "DESC" })
+    .then((data) => this.listaTrm=data)
+    .catch((error) => console.log(error));
+  }
+
+  
+
+}

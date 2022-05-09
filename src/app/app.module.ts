@@ -6,13 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './feature/home/home.component';
+import { TrmComponent } from './feature/trm/trm.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    TrmComponent
   ],
   imports: [
     BrowserModule,

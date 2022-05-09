@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card table-responsive">
+      <table class="table">
+        <caption>Tabla de la tasa representativa del dolar</caption>
+          <thead>
+            <tr>
+              <th scope="col">Valor</th>
+              <th scope="col">Vigencia Desde</th>
+              <th scope="col">Vigencia Hasta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let trm of listaTrm">
+               <td>{{ trm.valor | currency }}</td>
+               <td>{{ trm.vigenciadesde}}</td>
+               <td>{{ trm.vigenciahasta}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
