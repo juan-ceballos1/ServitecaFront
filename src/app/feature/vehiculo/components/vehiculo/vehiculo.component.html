@@ -3,15 +3,16 @@
       <div class="row">
           <div class="col-sm-auto  bg-light sticky-top">
               <div class="d-flex flex-sm-column ">
-                  <a  routerLink="./listar" class="p-3 link-dark text-decoration-none" data-bs-placement="right" >
+                  <a  routerLink="./listar" class="p-3 link-dark text-decoration-none" data-bs-placement="right" id="listarVehiculo">
                       Listar
                   </a>
-                  <a  routerLink="./crear" class="p-3 link-dark text-decoration-none"  data-bs-placement="right" >
+                  <a  routerLink="./crear" class="p-3 link-dark text-decoration-none"  data-bs-placement="right" id="crearVehiculo" >
                       Crear
                   </a>
               </div>
           </div>
-          <div class="col-sm  vh-100 mt-2">
+          <div class="col-sm  vh-100">
+            <div class="mb-5 mt-3 ms-3" id="txtHomeVehiculo">En este lugar podras ver y registrar los vehiculos</div>
             <router-outlet></router-outlet>
           </div>
       </div>

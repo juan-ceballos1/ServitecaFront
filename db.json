@@ -1,0 +1,100 @@
+{
+  "asistencia": [
+    {
+      "id": 1,
+      "tipoAsistencia": {
+        "id": 1,
+        "nombre": "REPA"
+      },
+      "vehiculo": {
+        "id": 1,
+        "matricula": "kfjnf",
+        "marca": "wegewg",
+        "modelo": "wegewg"
+      },
+      "fechaInicio": "2022-05-03 18:15:56",
+      "fechaFin": "2022-05-03 18:15:56",
+      "precio": 2000
+    },
+    {
+      "id": 2,
+      "tipoAsistencia": {
+        "id": 2,
+        "nombre": "LAVADO"
+      },
+      "vehiculo": {
+        "id": 2,
+        "matricula": "34454f",
+        "marca": "Nissan",
+        "modelo": "centra"
+      },
+      "fechaInicio": "2022-05-03 18:15:56",
+      "fechaFin": "2022-05-03 18:15:56",
+      "precio": 2600
+    },
+    {
+      "idTipoAsistencia": "1",
+      "idVehiculo": "1",
+      "fechaInicio": "2020-12-07T12:00:00",
+      "fechaFin": "2020-12-07T12:00:00",
+      "precio": "1234",
+      "id": 3
+    },
+    {
+      "idTipoAsistencia": "1",
+      "idVehiculo": "1",
+      "fechaInicio": "2020-12-07T12:00:00",
+      "fechaFin": "2020-12-07T12:00:00",
+      "precio": "1234",
+      "id": 4
+    },
+    {
+      "idTipoAsistencia": "1",
+      "idVehiculo": "1",
+      "fechaInicio": "2020-12-07T12:00:00",
+      "fechaFin": "2020-12-07T12:00:00",
+      "precio": "1234",
+      "id": 5
+    },
+    {
+      "idTipoAsistencia": "1",
+      "idVehiculo": "1",
+      "fechaInicio": "2020-12-07T12:00:00",
+      "fechaFin": "2020-12-07T12:00:00",
+      "precio": "1234",
+      "id": 6
+    },
+    {
+      "idTipoAsistencia": "1",
+      "idVehiculo": "1",
+      "fechaInicio": "2020-12-07T12:00:00",
+      "fechaFin": "2020-12-07T12:00:00",
+      "precio": "1234",
+      "id": 7
+    }
+  ],
+  "tipoasistencia": [
+    {
+      "id": 1,
+      "nombre": "REPA"
+    },
+    {
+      "id": 2,
+      "nombre": "LAVADO"
+    }
+  ],
+  "vehiculos": [
+    {
+      "id": 1,
+      "matricula": "kfjnf",
+      "marca": "wegewg",
+      "modelo": "wegewg"
+    },
+    {
+      "id": 2,
+      "matricula": "34454f",
+      "marca": "Nissan",
+      "modelo": "centra"
+    }
+  ]
+}

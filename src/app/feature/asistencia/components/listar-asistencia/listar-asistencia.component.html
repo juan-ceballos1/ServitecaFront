@@ -11,12 +11,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let asistencia of listaAsistencias | async">
+      <tr  *ngFor="let asistencia of listaAsistencias | async" id="listaAsistencias">
         <td>{{asistencia.tipoAsistencia.nombre}}</td>
         <td>{{asistencia.vehiculo.matricula}}</td>
         <td>{{asistencia.fechaInicio }}</td>
         <td>{{asistencia.fechaFin}}</td>
-        <td>{{asistencia.precio| currency:'symbol' }}</td>
+        <td>{{asistencia.precio| currency:'$' }}</td>
       </tr>
     </tbody>
   </table>

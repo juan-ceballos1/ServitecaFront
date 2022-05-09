@@ -13,10 +13,13 @@ export class TrmComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.consultarTrm();
+  }
+
+  consultarTrm(){
     this.trmApi
     .history({ limit: 30, order: "DESC" })
-    .then((data) => this.listaTrm=data)
-    .catch((error) => console.log(error));
+    .then((data) => this.listaTrm=data);
   }
 
   

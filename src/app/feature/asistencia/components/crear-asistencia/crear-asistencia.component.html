@@ -7,8 +7,8 @@
         <label>Tipo de Asistencia:</label>
       </div>
       <div class="col-sm-6">
-        <select  class="form-select" id="exampleFormControlSelect1" type="text" id="tipoAsistencia" name="tipoAsistencia" placeholder="TipoDeAsistencia" formControlName="idTipoAsistencia">
-          <option selected *ngFor="let tipoAsistencia of listaTipoAsistencias | async" value="{{tipoAsistencia.id}}">{{tipoAsistencia.nombre}}</option>  
+        <select  class="form-select" id="exampleFormControlSelect1" type="text" id="TipoAsistencia" name="idTipoAsistencia" placeholder="TipoDeAsistencia" formControlName="idTipoAsistencia">
+          <option selected *ngFor="let tipoAsistencia of listaTipoAsistencias | async" value="{{tipoAsistencia.id}}" >{{tipoAsistencia.nombre}}</option>  
        </select>
         
       </div>

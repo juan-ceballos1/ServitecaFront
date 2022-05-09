@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  endpoint: 'http://localhost:8080/serviteca'
+  endpoint: 'http://localhost:3000'
 };
