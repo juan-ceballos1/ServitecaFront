@@ -15,7 +15,7 @@ exports.config = {
   ],
   capabilities: {
     'browserName': 'chrome',
-    chromeOptions: { args: ["--disable-dev-shm-usage"] }
+    chromeOptions: { args: ["--headless","--disable-dev-shm-usage"] }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
