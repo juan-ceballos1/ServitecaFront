@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <h1 class="text-left">Elige la asistencia a modificar</h1>
+    <div class="col-sm-6">
+        <select [(ngModel)]="asistencia" class="form-select" id="exampleFormControlSelect1" type="text" id="Asistencia" name="asistencia" placeholder="asistencia" >
+          <option selected *ngFor="let asistencia of listaAsistencias | async" [ngValue]="asistencia" >{{asistencia.id}}</option>  
+       </select>
+    </div>
+    <form [formGroup]="asistenciaForm" (ngSubmit)="actualizar()">
+      <h1 class="text-left">Actualizar Asistencia</h1>
+      <br>
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Tipo de Asistencia:</label>
+        </div>
+        <div class="col-sm-6 ">
+            <input validar type="text" id="idAsistencia" name="asistencia" placeholder="{{asistencia.tipoAsistencia.id}}" class="form-control"
+              formControlName="idTipoAsistencia" value="{{asistencia.tipoAsistencia.id}}"[readonly]="true">
+          </div>
+      </div>
+    
+      <div class="row mt-2">
+        <div class="col-sm-2 ">
+          <label>Vehiculo:</label>
+        </div>
+        <div class="col-sm-6 ">
+          <input validar type="text" id="vehiculo" name="vehiculo" placeholder="{{asistencia.vehiculo.id}}" class="form-control"
+            formControlName="idVehiculo" value="{{asistencia.vehiculo.id}}" [readonly]="true">
+        </div>
+      </div>
+    
+      <div class="row mt-2">
+        <div class="col-sm-2">
+          <label>Fecha de Inicio:</label>
+        </div>
+        <div class="col-sm-6">
+          <input validar type="date" id="fechaDeInicio" name="fechaDeInicio" placeholder="{{asistencia.fechaInicio}}" class="form-control"
+            formControlName="fechaInicio" value="{{asistencia.fechaInicio| date:'yyyy-MM-dd' }}"[readonly]="true" >
+        </div>
+      </div>
+  
+      <div class="row mt-2">
+          <div class="col-sm-2">
+            <label>Fecha de Finalizacion:</label>
+          </div>
+          <div class="col-sm-6">
+            <input validar type="date" id="fechaDeFinalizacion" name="fechaDeFinalizacion" placeholder="{{asistencia.fechaFin}}" class="form-control"
+              formControlName="fechaFin" value="{{asistencia.fechaFin| date:'yyyy-MM-dd'}}" >
+          </div>
+        </div>
+  
+        <div class="row mt-2">
+          <div class="col-sm-2">
+            <label>Precio:</label>
+          </div>
+          <div class="col-sm-6">
+            <input validar type="text" id="precio" name="precio" placeholder="{{asistencia.precio}}" class="form-control"
+              formControlName="precio" value="{{asistencia.precio}}" [readonly]="true">
+          </div>
+        </div>
+      <button id="actualizar" class="btn btn-primary btn-block mt-4">
+        Actualizar Asitencia
+      </button>
+    </form>
+    </div>
+    

@@ -2,7 +2,7 @@ import { TipoAsistencia } from "src/app/feature/tipoasistencia/shared/model/tipo
 import { Vehiculo } from "src/app/feature/vehiculo/shared/model/vehiculo";
 
 export interface DtoAsistencia {
-    id:Number,
+    id:number,
     tipoAsistencia:TipoAsistencia,
     vehiculo:Vehiculo,
     fechaInicio:Date,

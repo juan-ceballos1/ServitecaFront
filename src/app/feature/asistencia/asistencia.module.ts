@@ -4,7 +4,8 @@ import { AsistenciaRoutingModule } from './asistencia-routing.module';
 import { ListarAsistenciaComponent } from './components/listar-asistencia/listar-asistencia.component';
 import { CrearAsistenciaComponent } from './components/crear-asistencia/crear-asistencia.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActualizarAsistenciaComponent } from './components/actualizar-asistencia/actualizar-asistencia.component';
 
 
 @NgModule({
@@ -12,12 +13,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   
     ListarAsistenciaComponent,
        CrearAsistenciaComponent,
-       AsistenciaComponent
+       AsistenciaComponent,
+       ActualizarAsistenciaComponent
   ],
   imports: [
     CommonModule,
     AsistenciaRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers:[DatePipe]
 })

@@ -20,6 +20,10 @@ export class AsistenciaService {
     return this.httpService.doPost<Asistencia, number>(`${environment.endpoint}/asistencia`, asistencia, this.httpService.optsName('crear asistencia'));
   }
 
+  public actualizarAsistencia(id:number,asistencia:Asistencia):Observable<Asistencia>{
+    return this.httpService.doPut(`${environment.endpoint}/asistencia/${id}`, asistencia);
+  }
+
   public eliminarAsistencia(id: number): Observable<Asistencia> {
     return this.httpService.doDelete(`${environment.endpoint}/asistencia/${id}`, this.httpService.optsName('eliminar asistencia'));
   }
