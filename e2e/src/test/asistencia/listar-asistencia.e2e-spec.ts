@@ -1,5 +1,5 @@
 import { AsistenciaPage } from "../../page/asistencia/asistencia.po";
-import { ListarAsistenciaPage } from "../../page/asistencia/listar.asistencia.po";
+import { ListarAsistenciaPage } from "../../page/asistencia/listar-asistencia.po";
 import { NavbarPage } from "../../page/navbar/navbar.po";
 
 describe('workspace-project serviteca', () => {
@@ -14,9 +14,9 @@ describe('workspace-project serviteca', () => {
         navBar.clickBotonAsistencia();
     });
 
-    it('Debería listar las compras', () => {
+    it('Debería listar las asistencias', () => {
         asistenciaPage.clickListar();
-        expect(listarAsistenciaPage.numeroDeCompras()).toBeGreaterThan(1);
+        expect(listarAsistenciaPage.numeroDeAsistencias()).toBeGreaterThan(1);
     });
 
 

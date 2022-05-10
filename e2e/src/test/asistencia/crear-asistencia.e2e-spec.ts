@@ -1,9 +1,9 @@
 import { browser} from "protractor";
 import { AsistenciaPage } from "../../page/asistencia/asistencia.po";
-import { CrearAsistenciaPage } from "../../page/asistencia/crear.asistencia.po";
+import { CrearAsistenciaPage } from "../../page/asistencia/crear-asistencia.po";
 import { NavbarPage } from "../../page/navbar/navbar.po";
 
-describe('workspace-project serviteca', () => {
+describe('workspace-project serviteca asistencia crear', () => {
     let navBar: NavbarPage;
     let crearAsistenciaPage: CrearAsistenciaPage;
     let asistenciaPage: AsistenciaPage;
@@ -38,7 +38,7 @@ describe('workspace-project serviteca', () => {
         
     });
 
-    it('No debería crear una compra por campos inválidos', () => {
+    it('No debería crear una asistencia por valores no ingresados', () => {
         crearAsistenciaPage.guardar();
         expect(crearAsistenciaPage.getSwalFireTitle()).toEqual('No has llenado todos los campos');
     });

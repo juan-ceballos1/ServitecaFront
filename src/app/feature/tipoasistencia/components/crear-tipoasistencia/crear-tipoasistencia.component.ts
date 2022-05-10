@@ -25,19 +25,28 @@ export class CrearTipoasistenciaComponent implements OnInit {
           this.tipoAsistencia.reset()
           Swal.fire({
             icon:'success',
-            title:'Se ha añadido el tipo asistencia de forma correcta'
+            title:'Se ha añadido el tipo asistencia de forma correcta',
+            timer: 1000,
+            showCancelButton: false,
+            showConfirmButton: false
           })
         },
         error=>{Swal.fire({
           icon:'error',
-          title:error.error.mensaje
+          title:error.error.mensaje,
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false
         })}
         );
       }
       else{
         Swal.fire({
           icon:'error',
-          title:"No has llenado todos los campos"
+          title:"No has llenado todos los campos",
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false
         })
       }
   }

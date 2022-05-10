@@ -2,7 +2,7 @@ import { browser } from "protractor";
 import { NavbarPage } from "../../page/navbar/navbar.po";
 import { TipoAsistenciaPage } from "../../page/tipoasistencia/tipo-asistencia.po";
 
-describe('workspece-asistencia',()=>{
+describe('workspece-tipo-asistencia',()=>{
     let tipoAsistencia:TipoAsistenciaPage;
     let navbar:NavbarPage;
     

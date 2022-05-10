@@ -7,7 +7,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tipoAsistencia of listaTipoAsistencias | async">
+      <tr *ngFor="let tipoAsistencia of listaTipoAsistencias | async" id="listaTipoAsistencias">
         <td>{{tipoAsistencia.id}}</td>
         <td>{{tipoAsistencia.nombre}}</td>
       </tr>
